@@ -9,11 +9,11 @@ int main(){
 	char polinomios[5][20];				//Array de strings a serem derivados
 	int coeficientesResposta[5];		//Array de coeficientes derivados
 	int expoentesResposta[5];			//Array de expoentes derivados
-	int quantidadeTermos = 1;			//Vari·vel que armazena quantos termos est„o presentes
+	int quantidadeTermos = 1;			//Vari√°vel que armazena quantos termos est√£o presentes
 	char *termo, *variavel;				//Ponteiros para utilizar no strtok
 	
 	while(1){
-		//Insere a quantidade de termos da express„o
+		//Insere a quantidade de termos da express√£o
 		printf("Digite a quantidade de termos da espressao: \n");
 		scanf("%d",&quantidadeTermos);
 		
@@ -25,11 +25,11 @@ int main(){
 		//Limpa o buffer de entrada
 		fflush(stdin);
 		
-		//Recebe o valor para a express„o como uma string
+		//Recebe o valor para a express√£o como uma string
 		printf("Digite a expressao a ser derivada: \n");
 		fgets(termosEntrada, sizeof(termosEntrada), stdin);
 		
-		//Separa as strings de acordo com os espaÁos, pulando o sinal de "+"
+		//Separa as strings de acordo com os espa√ßos, pulando o sinal de "+"
 		termo = strtok(termosEntrada," ");
 		for(int i=0;i<quantidadeTermos;i++){
 			if(strcmp(termo,"+") != 0){
@@ -42,7 +42,7 @@ int main(){
 			termo = strtok(NULL, " ");
 		}
 		
-		//Separa os coeficientes e expoentes de cada polinÙmio, derivando eles e armazenando novamente
+		//Separa os coeficientes e expoentes de cada polin√¥mio, derivando eles e armazenando novamente
 		for(int i=0;i<quantidadeTermos;i++){
 			variavel = strtok(polinomios[i],"x");
 			int coeficiente = atoi(variavel);
@@ -63,9 +63,9 @@ int main(){
 			
 		for(int i=1;i<quantidadeTermos;i++){
 			printf(" + %dx%d",coeficientesResposta[i],expoentesResposta[i]);
-					
-		printf("\n");
 		}
+		
+		printf("\n");
 	}
 	
 	return 0;
